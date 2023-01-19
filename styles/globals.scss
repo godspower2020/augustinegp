@@ -1,0 +1,1575 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+:root {
+  --font-base: "DM Sans", sans-serif;
+
+  /* --primary-color: #edf2f8; */
+  --primary-color: #f9f9f9;
+  --secondary-color: #313bac;
+  --tertiary-bg-color: #F5F4FC;
+  --black-color: #030303;
+  --lightGray-color: #e4e4e4;
+  --gray-color: #6b7688;
+  --brown-color: #46364a;
+  --border-color: #cbc9dd;
+  --white-color: #ffffff;
+  --resume-darker-text-color: #474747;
+  --resume-text-color: #474747BF;
+}
+
+* {
+  font-family: var(--font-base);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#home {
+  background: black;
+  overflow-y: hidden !important;
+  position: relative
+}
+@media screen and (min-width: 1024px) {
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+span {
+  letter-spacing: 2px;
+}
+
+li {
+  list-style: none;
+}
+
+.mb-0-5 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-5 {
+  margin-bottom: 5rem; 
+}
+
+.lh-1-5 {
+  line-height: 1.5rem;
+}
+
+.app {
+  background-color: var(--white-color);
+  font-family: var(--font-base);
+}
+  
+.app__whitebg {
+  background-color: var(--white-color);
+}
+  
+.app__primarybg {
+  background-color: var(--primary-color);
+}
+
+.app__container {
+  width: 100% !important;
+  max-width: 1500px;
+  margin: 0 auto;
+  min-height: 100vh !important;
+  display: flex;
+  flex-direction: row;
+
+  // @media screen and (min-width: 1024px) {
+  //   scroll-snap-type: y mandatory;
+  //   overflow-y: scroll;
+  // }
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__flex__justify-content-flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.app__flex__align-items-flex-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app__flex__justify-align-flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.app__flex__justify-align-flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.app__flex__justify-content-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app__wrapper {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  padding: 2rem 0 0;
+  
+  @media screen and (min-width: 450px) {
+    padding: 0 2rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    scroll-snap-align: start;
+  }
+}
+
+.head-text {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--black-color);
+  text-transform: capitalize;
+  margin: 6rem 0 4rem;
+  opacity: 0.1;
+
+  span {
+    color: var(--secondary-color);
+  }
+
+  @media screen and (min-width: 710px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+}
+
+.p-text {
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem;
+  }
+}
+
+.normal-spacing {
+  letter-spacing: normal !important;
+  font-weight: 800;
+}
+
+.big__p-text {
+  font-size: 1rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem;
+  }
+}
+
+.bold-text {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--black-color);
+  text-align: left;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.9rem;
+  }
+}
+
+.app__social {
+  position: fixed;
+  z-index: 10;
+  left: 1rem;
+  bottom: 5%;
+
+  div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    margin: 0.8rem 0;
+    border: 1px solid var(--lightGray-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease-in-out;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      color: var(--gray-color);
+    }
+
+    &:hover {
+      background-color: var(--gray-color);
+      border-color: var(--gray-color);
+      cursor: pointer;
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 70px;
+      height: 70px;
+
+      margin: 0.5rem 0;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.app__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10;
+  right: 0.5rem;
+  bottom: 15%;
+  padding: 1rem;
+
+  .flex-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      display: none;
+      background-color: var(--white-color);
+      color: var(--gray-color);
+      padding: 0 .2rem;
+      border: 1px solid var(--lightGray-color);
+      border-radius: 15px;
+      font-size: .7rem;
+      letter-spacing: normal !important;
+    }
+  
+    .app__navigation-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--secondary-color);
+      margin: 0.6rem 0.5rem;
+      transform: rotate(45deg);
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+    }
+
+    &:hover {
+      span {
+        display: block;
+      }
+    }
+
+    .app__navigation-dot-active {
+      transform: rotate(180deg) !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .app__navigation,
+  .app__social {
+    display: none;
+  }
+}
+  
+// ------------------- NAVBAR BASIC STYLES -------------------
+.app__Navbar {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  z-index: 500; 
+
+  @media screen and (min-width: 701px) {
+    padding: 1.8rem;
+  }
+
+  @media screen and (min-width: 850px) {
+    padding: 3rem 4rem;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .app__Navbar-fixed {
+    position: fixed !important;
+  }
+}
+
+.app__Navbar-logo h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: none;
+
+  .blue {
+    color: var(--secondary-color);
+  }
+}
+
+.app__Navbar-logo,
+.nav__toggler {
+  cursor: pointer;
+  z-index: 500;
+}
+
+.nav__toggler {
+  width: 34px;
+  height: 34px;
+
+  div {
+    width: 100%;
+    height: 2px;
+    margin: 0.5rem auto;
+    background: var(--secondary-color);
+    transition: 0.3s ease-in;
+  }
+
+  .line1 {
+    width: 50%;
+    margin: 0.5rem 0;
+  }
+
+  .line3 {
+    width: 50%;
+    margin: 0.5rem 0 0.5rem auto;
+  }
+}
+
+// toggler Icon Animation
+.toggle .line1 {
+  width: 100%;
+  transform: rotate(314deg) translate(-6px, 7px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  width: 100%;
+  transform: rotate(45deg) translate(-7px, -8px);
+}
+
+.app__Navbar-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  padding: 8rem 2rem 3rem;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  opacity: 0;
+  transition: 0.3s ease-in;
+  background-color: var(--white-color);
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: 701px) {
+    top: 1.5rem;
+    bottom: 0;
+    right: .5rem;
+    padding: 5rem 3rem 2.5rem;
+    width: 330px;
+    height: 460px;
+    transform-origin: top right;
+    box-shadow: 0 10px 53px 0 rgba(163, 204, 170, 0.30);
+  }  
+
+  @media screen and (min-width: 850px) {
+    right: 2rem;
+  }
+
+  .inner__flex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+  
+      .menu_link {
+        padding: .7rem 0;
+        font-size: 1rem;
+        text-transform: capitalize;
+      }
+  
+      .menu_link-hide {
+        display: none !important;
+      }
+  
+      a {
+        color: var(--secondary-color);
+      }
+    }
+  
+    .nav__social-text {
+      flex-direction: column !important;
+
+      a {
+        padding: .47rem 0;
+      }
+
+      .instagram{
+        color: linear-gradient(to left, purple, red);
+        // background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+        // background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+        // background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+      }
+    }
+  }
+}
+
+// Nav Active class
+.nav__active {
+  display: block;
+  opacity: 1;
+  transition: 0.3s ease-in;
+}
+
+
+// ------------------ HEADER BASIC STYLES -----------------------
+.app__header {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  padding: 0 .7rem;
+  flex-direction: column;
+
+  @media screen and (min-width: 701px) {
+    padding: 8rem 7rem 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+      flex-direction: row;
+  }
+    
+  .app__header-info {
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-right: 0rem;
+
+    .app__header-badge {
+      width: 100%;
+      flex-direction: column;
+      padding: 0 0 2rem;
+
+      .div-margin {
+        margin: 1.2rem 0;
+
+        h1 {
+          font-size: 3.5rem;
+          color: var(--secondary-color);
+        }
+      }
+
+      .hero__text-div {
+        
+
+        .no-wrap {
+          font-size: 2rem;
+          font-weight: bold;
+          color: green;
+          padding: .3rem .3rem .8rem 0;
+          white-space: nowrap;
+        }
+      }
+
+      .hero-text {
+        
+        
+        .line {
+            width: 100%;
+            text-transform: uppercase;
+            text-align: right;
+            font-size: 2rem;
+            line-height: 60px;
+        }
+
+        // p:nth-child(1) {
+        //     animation: animate 6s infinite;
+        // }
+
+        // @keyframes animate {
+        //     0% {
+        //         margin-top: 0;
+        //     }
+        //     33.3% {
+        //         margin-top: -60px;
+        //     }
+        //     66.6% {
+        //         margin-top: -180px;
+        //     }
+        //     100% {
+        //         margin-top: -240px;
+        //     }
+        // }
+      }
+
+      span {
+        // font-size: 2.5rem;
+        
+        @media screen and (min-width: 1024px) {
+          // font-size: 5rem;
+        }
+      }
+      
+      @media screen and (min-width: 1200px) {
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+      }
+    }
+  }
+
+  .app__header-img {
+    flex: 1;
+    height: 100%;
+    height: 100%;
+  
+    @media screen and (min-width: 769px) {
+      height: 80%;
+    }
+  
+    img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 2;
+      margin: 1.2rem auto 0;
+
+      @media screen and (min-width: 1024px) {
+        display: block;
+        margin: -100px 0 0;
+      }
+    }
+  }
+}
+
+
+// -------------------- BASCI ABOUT STYLES -------------------------
+
+#Spotlights {
+  background: linear-gradient(180deg,transparent 60%,#F5F4FC 0);
+}
+
+// .app__profiles {
+//   margin-top: 2rem;
+//   padding: 0 0 0 8rem;
+
+//   .app__profile-item {
+//     border-radius: 15%;
+//     width: 260px;
+//     height: 330px;
+//     flex-direction: column;
+//     margin: 2rem;
+//     z-index: 1;
+//     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  
+//     .image-color {
+//       background-color: var(--lightGray-color);
+//       height: 100px;
+//       width: 100%;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+  
+//       img {
+//         width: 40%;
+//         object-fit: cover;
+//         margin: 1.5rem 0;
+//       }
+//     }
+  
+//     .text-color {
+//       width: 100%;
+//       height: 100%;
+//       background-color: var(--white-color);
+  
+//       h2 {
+//         padding: .5rem;
+//         color: #5F6368;
+//       }
+//     }
+//   }
+// }
+
+// -------------------- BASCI Quota STYLES -------------------------
+#Quota {
+  background-color: var(--black-color);
+  color: var(--primary-color);
+
+  @media screen and (min-width: 710px) {
+    .spatial {
+      padding: 0 2rem;
+    }
+  }
+}
+
+
+// -------------------- BASCI SKILLS & EXPERIENCES STYLES -------------------------
+
+.percent-88-container {
+  width: 88%;
+  margin: 0 auto;
+}
+
+.app__skills {
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+}
+
+.app__skills-container {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 1200px) {
+        margin: 0 auto;
+        flex-direction: row;
+    }
+}
+
+.app__skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 1200px) {
+        margin-right: 2rem;
+    }
+
+    @media screen and (min-width: 1330px) {
+      margin-right: 3.5rem;
+  }
+}
+
+.app__skills-item {
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem;
+    transition: all 0.3s ease-in-out;
+
+    div {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media screen and (min-width: 2000px) {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    p {
+        font-weight: 500;
+        margin-top: 0.5rem;
+    }
+
+    @media screen and (min-width: 2000px) {
+        margin: 1rem 2rem;
+        margin-top: 1rem;
+    }
+}
+
+.app__skills-exp {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto 0;
+    padding: 1rem 0.5rem;
+}
+
+.app__skills-exp-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.app__skill-exp-works {
+    flex: 1;
+
+    .app__skills-exp-work {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 1rem;
+        cursor: pointer;
+
+        h4 {
+            font-weight: 500;
+        }
+
+        p {
+            font-weight: 400;
+            color: var(--gray-color);
+            margin-top: 5px;
+          }
+
+    }
+}
+
+
+.text {
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+  margin-bottom: 2.5rem !important;
+}
+
+.app__skills-exp-year {
+    margin-right: 2rem;
+
+    p {
+        font-weight: 800;
+        color: var(--secondary-color);
+    }
+}
+
+.skills-tooltip {
+    max-width: 300px !important;
+    background-color: var(--white-color) !important;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+    border-radius: 5px !important;
+    padding: 1rem !important;
+    color: var(--gray-color) !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    opacity: 1 !important;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem !important;
+    max-width: 500px !important;
+    line-height: 2 !important;
+  }
+}
+
+// -------------------- BASCI TESTIMONIALS STYLES -------------------------
+
+.app__testimonial {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+.app__testimonial-item {
+  width: 90%;
+  margin: 0 auto;
+  min-height: 280px;
+  background-color: var(--tertiary-bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: rgba(32, 27, 27, 0.2) 0px 2px 8px 0px;
+  transition: all 0.3s ease-in-out;
+
+  img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      object-fit: cover;
+  }
+  
+  @media screen and (min-width: 600px) {
+      flex-direction: row;
+  } 
+  
+  @media screen and (min-width: 850px) {
+    max-width: 70%;
+  } 
+
+  @media screen and (min-width: 1100px) {
+    width: 850px;
+  }   
+}
+
+.app__testimonial-content {
+  flex: 1;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  @media screen and (min-width: 600px) {
+    padding: 0 2rem 0 3rem; 
+  } 
+
+  p {
+      color: var(--gray-color);
+      margin-top: 2rem;
+  }
+
+  h4 {
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-top: 2rem;
+  }
+
+  h5 {
+      font-weight: 400;
+      color: var(--gray-color);
+      margin-top: 5px;
+  }
+}
+
+.app__testimonial-btns {
+  flex-direction: row;
+  margin-top: 1rem;
+
+  div {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--lightGray-color);
+      margin: 1rem;
+      transition: all 0.3s ease-in-out;
+
+      svg {
+          width: 15px;
+          height: 15px;
+          color: var(--gray-color);
+      }
+
+      &:hover {
+          background-color: var(--gray-color);
+          cursor: pointer;
+
+          svg {
+              color: var(--white-color);
+          }
+      }
+  }
+}
+
+// -------------------- BASCI contact PAGE STYLES -------------------------
+.contact__form-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 1100px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-start;
+  }
+
+  .admin-contact {
+    
+    .admin-contact-card{
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+  
+        .p-text{
+            font-size: 1rem; 
+            padding: 0 1rem;
+            color: #00acee;
+            text-decoration: none;
+        }
+    } 
+
+    .column {
+      flex-direction: column;
+      padding-top: 3rem;
+
+      .contact__menu_link {
+        padding: .9rem .9rem .9rem 0;
+
+        a {
+          text-decoration: none;
+          color: #0072B1;
+        }
+      }
+      
+      .contact__menu_link-hide {
+        display: none !important;
+      }
+    }
+  }
+
+  .client__contact-details{
+      margin: 3rem 0 6rem;
+      padding: 0 .5rem;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 980px) {
+          margin: 0 0 1rem;
+          width: 580px;
+
+          .line{
+              display: flex;
+              justify-content: space-between;
+          }
+      }     
+      
+      input {
+          width: 100%;
+          opacity: .5;
+
+          @media screen and (min-width: 980px) {
+              width: 250px;
+          }
+      }
+      
+      textarea {
+        resize: none;
+        overflow-y: scroll;
+        opacity: .5;
+      }
+
+      input,
+      textarea,
+      button{
+          padding: 1rem;
+          margin: 1.5rem 0;
+          border-radius: 10px;
+          outline: none;
+          font-size: 13px;
+          border: 1px solid var(--lightGray-color);
+          
+          &::placeholder {
+              color: var(--gray-color);
+          }
+
+          @media screen and (min-width: 980px) {
+            font-size: 17px;
+        }
+      }
+
+      .send-button{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          button{
+              display: flex;
+              align-items: center;
+              padding: 1rem 2rem;
+              background-color: var(--secondary-color);
+              color: var(--white-color);
+              cursor: pointer;
+              transition: all 0.5s ease-in-out;
+  
+              &:hover{
+                  background-color: var(--gray-color);
+              }
+  
+              svg{
+                  margin-right: 8px;
+              }
+          }
+      }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 0 1rem;
+  
+  p {
+    font-size: 1.2rem;
+    padding: .7rem 0 1.5rem;
+  }
+
+  .contact__social-text {
+    padding: .7rem 0 1.5rem;
+
+    @media screen and (min-width: 1025px) {
+      display: none;
+    }
+
+    a {
+      font-size: .9rem;
+      text-decoration: none;
+      padding: 0 .6rem;
+    }
+  }
+}
+
+// -------------------- BASCI RESUME PAGE STYLES -------------------------
+
+.resume {
+  font-family: var( --font-base);
+  
+  p {
+    letter-spacing: normal !important;
+  }
+
+  .main__content {
+    background-color: var(--tertiary-bg-color);
+    color: var(--resume-text-color);
+    padding: 7rem 1rem;
+    flex-direction: column;
+    width: 100% !important;
+    height: 100%;
+
+    @media screen and (min-width: 410px) {
+      padding: 7rem 3rem;
+    }
+
+    @media screen and (min-width: 791px) {
+      flex-direction: row;
+    }
+    
+    @media screen and (min-width: 1190px) {
+        margin: 4.5rem 5rem;
+    }
+  }
+}
+
+.tech__stack {
+  font-size: 14px;
+  display: flex;
+
+  .apex-with-margin-on-small {
+    margin-right: 1rem;
+
+    @media screen and (min-width: 791px) {
+      margin-right: 5rem;
+      white-space: nowrap !important;
+    }
+  }
+
+  h3 {
+    color: #3120E0;
+    font-size: 17px;
+  }
+
+  p {
+      @media screen and (min-width: 791px) {
+        white-space: nowrap !important;
+      }
+  }
+
+  @media screen and (min-width: 791px) {
+    margin: 0 6rem 0 0;
+    flex-direction: column;    
+    justify-content: flex-start;
+
+    .apex-with-margin-on-small {
+      margin-right: 0;
+    }
+  }
+}
+
+.experiences {
+  flex-direction: column;
+
+  p {
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+  }
+
+  .company .points {
+    margin: 1rem 0 2.2rem;
+
+    @media screen and (min-width: 1190px) {
+      margin-right: 15rem;
+    }
+    
+    li {
+      font-size: 16.4px;
+      line-height: 1.81rem;
+    }
+  }
+  
+  .some-margins {
+      margin: 1.8rem 0 1.5rem 0 !important;
+  }
+
+  .small-margin {
+      margin: 1rem 0 1.5rem 0 !important;
+  }
+
+  .name__stack h1 {
+      font-size: 2.5rem;
+      font-weight: bolder;
+      color: var(--secondary-color);
+      line-height: 1.1;
+      letter-spacing: normal !important;
+
+      @media screen and (min-width: 791px) {
+        font-size: 4rem;
+      }
+  }
+
+  .name__stack h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--resume-darker-text-color);
+
+      @media screen and (min-width: 791px) {
+        font-size: 1.7rem;
+      }
+  }
+
+  h3 {
+      margin: 0 1rem .5rem 0;
+
+      span::before {
+          content: '  ';
+      }
+  }
+  
+  .company .inherent-color {
+      font-size: 15px;
+      font-weight: 200;
+      color: var(--resume-text-color);
+  }
+
+  @media screen and (min-width: 992px) {
+    .name__stack p {
+        margin: 1.7rem 15rem 1.5rem 0;
+    }
+
+    .some-margins {
+        margin: 1.8rem 10rem 1.5rem 0 !important;
+    }
+  }
+
+  .company header {
+    margin: 0 0 .8rem 0 !important;
+}
+
+@media screen and (min-width: 1190px) {  
+  .name__stack p {
+      margin: 3rem 15rem 0 0;
+  }
+
+  .company header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .company .work-info {
+    max-width: 60%;
+    
+    li {
+        margin-bottom: .5rem;
+    }
+  }
+}
+
+  .company .huge-dots {
+    margin-bottom: 0.4rem;
+    font-size: 17px;
+  }
+
+  .company .huge-dots::before {
+      content: '';
+      width: 0.3rem;
+      height: 0.3rem;
+      margin-right: 1em;
+      vertical-align: 10%;
+      display: inline-block;
+      filter: contrast(1.2);
+      background: currentColor;
+  }
+}
+
+// -------------------- BASCI PORTFOLIO PAGE STYLES -------------------------
+
+#portfolio {
+  background-color: var(--primary-color);
+}
+
+.app__works {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+}
+
+.add-top-margin {
+  margin-top: 1.5rem;
+}
+
+.reduce-h6-top-margin {
+  margin-top: 1.5rem;
+  font-weight: 100;
+  font-size: 20px;
+}
+
+.app__work-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 4rem 0 2rem;
+
+  .app__work-filter-item {
+    padding: 0.4rem .2rem;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+    margin: 0.5rem;
+
+    @media screen and (min-width: 701px) {
+      margin: 1rem;
+    } 
+
+    &:hover {
+      border-bottom: 2px solid var(--secondary-color);
+    }
+  }
+
+  .item-active {
+    border-bottom: 2px solid var(--secondary-color);
+  }
+}
+
+.app__work-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .app__work-item {
+    flex-direction: column;
+    margin: 2rem .8rem;
+    padding: 0 .5rem .5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+
+    @media screen and (min-width: 600px) {
+      width: 370px;
+      height: 350px;
+      margin: 2rem;
+    } 
+
+    .colorful__apple-dots {
+      padding: .3rem 0;
+      display: flex;
+      justify-content: flex-start !important;
+      align-items: center;
+
+      div {
+        width: .4rem;
+        height: .4rem;
+        border-radius: 50%;
+        margin: .2rem;
+      }
+    }
+  }
+}
+
+.app__work-img {
+  cursor: pointer;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  background-color: var(--primary-color);
+
+  img {
+    width: 40%;
+    object-fit: cover;
+  }
+}
+
+.app__work-content {
+  padding: 0.5rem;
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+
+  span {
+    padding: .7rem;
+    letter-spacing: normal !important;
+  }
+
+  .app__work-tag {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+    top: -25px;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+
+  @media screen and (min-width: 2000px) {
+    margin-top: 3rem;
+  }
+}
+
+a {
+  text-decoration: underline;
+
+  h5 {
+    color: #3366CC;
+    font-size: 17px;
+  }
+}
+
+// -------------------- BASCI PORTFOLIODETAILS DYNAMIC SLUG PAGE STYLES -------------------------
+
+.grey-bg {
+  background-color: var(--primary-color);
+}
+
+.back {
+  padding: 1rem 1rem 3rem;
+
+  svg {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+    margin-right: 2.5rem;
+    
+    @media screen and (min-width: 600px) {
+      font-size: 3rem;
+    } 
+  }
+
+  @media screen and (min-width: 600px) {
+    padding: 1rem 4rem 3rem;
+  }
+}
+
+.coming__soon {
+  font-size: 1.3rem;
+  padding: 6rem 0 1.5rem;
+}
+
+.portfolio-detail-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 4% 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  
+  .back {
+    text-align: left !important;
+  }
+
+  h2 {
+    color: var(--black-color);
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  .portfolio-detail-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    svg {
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+    
+    .portfolio-detail-img{
+      width: 76%;
+      transition: .3s ease-in-out;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+      margin: 0 .3rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media screen and (min-width: 1190px) {
+        width: 1100px;
+        height: 590px;
+      }
+    }
+  }
+
+  .small-images-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    
+    div {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid var(--secondary-color);
+      cursor: pointer;
+    }
+    
+    .selected-image{
+      background-color: var(--secondary-color);
+    }
+  }
+
+  .details-text-company-works {
+    display: flex;
+    flex-direction: column;
+    color: var(--gray-color);
+    line-height: 1.7;
+
+    @media screen and (min-width: 992px) {
+      .details-text {
+        padding-right: 3rem;
+      }
+    }
+
+    .details-text p {
+      margin-bottom: 1.6rem;
+    }
+
+    .details-company-works {
+      display: flex;
+      flex-direction: column;
+      padding: 4rem 0;
+      line-height: 2;
+
+      .details-company {
+        padding-right: 3rem;
+        padding-bottom: 4rem;
+      }
+
+      @media screen and (min-width: 701px) {
+        white-space: nowrap;
+      }
+
+      @media screen and (min-width: 992px) {
+        padding: 0;
+      }
+    }
+
+    span {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    @media screen and (min-width: 992px) {
+        flex-direction: row;
+      }
+  }
+
+  .project__code-link {
+    padding: 2rem 0 1rem;
+
+    .bold {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    p {
+      margin-top: .6rem;
+    }
+  }
+}
