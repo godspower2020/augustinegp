@@ -45,8 +45,10 @@ const Navbar = () => {
     <nav className={`${navbar} app__flex__justify-content-space-between`}>
 
       <div className="app__Navbar-logo app__flex__justify-content-flex-start">
-        <Link href='/'>
-          <h1><span className='blue'>A</span></h1>
+        <Link href='/' legacyBehavior>
+          <a>
+            <h1><span className='blue'>A</span></h1>
+          </a>
         </Link>
       </div>
       
