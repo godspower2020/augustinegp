@@ -54,9 +54,6 @@ const Contact = () => {
       }
     }]
 
-    const sanityToken = 'process.env.NEXT_SANITY_TOKEN'
-    console.log(sanityToken)
-
     fetch(`https://78gvtlsb.api.sanity.io/v2022-03-10/data/mutate/production`, {
       method: 'post',
       headers: {
@@ -80,6 +77,7 @@ const Contact = () => {
   return (
     <div id='Contact'>
       <h2 className='head-text'>wanna say hello</h2>
+      <p className='app__flex contact-bold'>interested in working together ?</p>
       <div className='contact__form-container'>
         <motion.div 
           whileInView={{ x: [-200, 0], opacity: [0, 1] }}
@@ -91,8 +89,8 @@ const Contact = () => {
             <a className='p-text' href='tel:+2347033903922'>+2347033903922</a>
           </div>
           <div className='admin-contact-card'>
-            <AiOutlineMail />
-            <a className='p-text' href='hello@augustine.dev'>hello@augustine.dev</a>
+            <AiOutlineMail /> 
+            <a className='p-text' href='hello@augustine.dev'>augustine40@gmail.com</a>
           </div>
           <ul className='app__flex__justify-align-flex-start column'>
             {navLinks.map((item, index) => (
