@@ -13,9 +13,9 @@ const Resume = ({techStacks, versionControls, otherTechStacks, experiences}) => 
       </Head>
       <div className='app__flex__justify-align-flex-start resume app__whitebg'>
         <aside>
-            <a href='https://www.linkedin.com/in/augustine-godspower-523a2b1a4/' target='_blank'>
+            {/* <a href='https://www.linkedin.com/in/augustine-godspower-523a2b1a4/' target='_blank'>
               <AiFillLinkedin />
-            </a>
+            </a> */}
             {/* <a href=''>
               <AiOutlineDownload /> download
             </a> */}
