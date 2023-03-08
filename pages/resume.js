@@ -12,14 +12,14 @@ const Resume = ({techStacks, devTools, otherTechStacks, experiences}) => {
         <title>My Resume - skills & experiences</title>
       </Head>
       <div className='app__flex__justify-align-flex-start resume app__whitebg'>
-        <aside>
-            {/* <a href='https://www.linkedin.com/in/augustine-godspower-523a2b1a4/' target='_blank'>
+        {/* <aside>
+            <a href='https://www.linkedin.com/in/augustine-godspower-523a2b1a4/' target='_blank'>
               <AiFillLinkedin />
-            </a> */}
-            {/* <a href=''>
+            </a>
+            <a href=''>
               <AiOutlineDownload /> download
-            </a> */}
-        </aside>
+            </a>
+        </aside> */}
         <div className='main__content app__flex__justify-align-flex-start'>
           <div className='tech__stack'>
             <div className='apex apex-with-margin-on-small'>
@@ -36,7 +36,7 @@ const Resume = ({techStacks, devTools, otherTechStacks, experiences}) => {
             </div>
             <div className='apex'>
                 <div className='lh-1-5 mb-2'>
-                  <h3>Tech Tools:</h3>
+                  <h3>Tools:</h3>
                   {devTools?.map((devTool) => <DevTools key={devTool._id} devTool={devTool} />)}
                 </div>
                 <div className='lh-1-5 mb-2'>

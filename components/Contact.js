@@ -86,7 +86,7 @@ const Contact = () => {
         >
           <div className='admin-contact-card'>
             <AiOutlineMobile />
-            <a className='p-text' href='tel:+2347033903922'>+2347033903922</a>
+            <a className='p-text' href='tel:+2347033903922'>+234 (703) 390 3922</a>
           </div>
           <div className='admin-contact-card'>
             <AiOutlineMail /> 
