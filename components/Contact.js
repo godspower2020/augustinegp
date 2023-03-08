@@ -35,7 +35,7 @@ const Contact = () => {
   const { name, email, message } = formData;
   
   const today= new Date()
-  const year= today. getFullYear()
+  const year= today.getFullYear()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -90,7 +90,7 @@ const Contact = () => {
           </div>
           <div className='admin-contact-card'>
             <AiOutlineMail /> 
-            <a className='p-text' href='hello@augustine.dev'>augustine40@gmail.com</a>
+            <a className='p-text' href='mailto: augustine07@gmail.com'>augustinegp07@gmail.com</a>
           </div>
           <ul className='app__flex__justify-align-flex-start column'>
             {navLinks.map((item, index) => (

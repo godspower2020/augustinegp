@@ -1,8 +1,16 @@
 export default{
-    name:'versionControls',
-    title:'Version Controls',
+    name:'devTools',
+    title:'dev Tools',
     type: 'document',
     fields:[
+        {
+            name:'icon',
+            title:'Icon',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+        },
         {
             name:'name',
             title:'Name',
@@ -12,6 +20,7 @@ export default{
             name:'color',
             title:'Color',
             type:'string'
-        }
+        },
     ]
 }
+

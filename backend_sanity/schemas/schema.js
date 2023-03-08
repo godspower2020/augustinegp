@@ -12,8 +12,8 @@ import otherTechStacks from './otherTechStacks'
 import portfolios from './portfolios'
 import skills from './skills'
 import techStacks from './techStacks'
+import devTools from './devTools'
 import testimonials from './testimonials'
-import versionControls from './versionControls'
 import workExperience from './workExperience'
 import startYearWorkExperience from './startYearWorkExperience'
 
@@ -33,8 +33,8 @@ export default createSchema({
     portfolios,
     skills,
     techStacks,
+    devTools,
     testimonials,
-    versionControls,
     workExperience,
     startYearWorkExperience
   ]),

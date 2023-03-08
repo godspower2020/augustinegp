@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { AiFillLinkedin, AiOutlineDownload } from 'react-icons/ai';
 
 import{ client } from '../lib/sanityClient';
-import { TechStack, VersionControl, OtherTechStacks, Experiences } from '../components/resumeComponents';
+import { DevTools, TechStack, OtherTechStacks, Experiences } from '../components/resumeComponents';
 
-const Resume = ({techStacks, versionControls, otherTechStacks, experiences}) => {
+const Resume = ({techStacks, devTools, otherTechStacks, experiences}) => {
   return (
     <div id='resume'>
       <Head>
@@ -26,7 +26,7 @@ const Resume = ({techStacks, versionControls, otherTechStacks, experiences}) => 
                 <div className='info__links lh-1-5 mb-2'>
                   {/* <a href='http://augustine.dev'>augustine.dev</a> */}
                   <p>Warri, Nigeria</p>
-                  <p><a href='mailto: augustine07@gmail.com'>augustine07@gmail.com</a></p>
+                  <p><a href='mailto: augustine07@gmail.com'>augustinegp07@gmail.com</a></p>
                   <p><a href='phone: +2347033903922'>+234 (703) 390 3922</a></p>
                 </div>
                   <div className='lh-1-5 mb-2'>
@@ -36,8 +36,8 @@ const Resume = ({techStacks, versionControls, otherTechStacks, experiences}) => 
             </div>
             <div className='apex'>
                 <div className='lh-1-5 mb-2'>
-                  <h3>Version Control:</h3>
-                  {versionControls.map((versionControl) => <VersionControl key={versionControl._id} versionControl={versionControl} />)}
+                  <h3>Tech Tools:</h3>
+                  {devTools?.map((devTool) => <DevTools key={devTool._id} devTool={devTool} />)}
                 </div>
                 <div className='lh-1-5 mb-2'>
                   <h3>Others:</h3>
@@ -71,8 +71,8 @@ export const getServerSideProps = async () => {
     const query = '*[_type == "techStacks"]';
     const techStacks = await client.fetch(query);
 
-    const versionControlsQuery = '*[_type == "versionControls"]';
-    const versionControls = await client.fetch(versionControlsQuery);
+    const devToolsQuery = '*[_type == "devTools"]';
+    const devTools = await client.fetch(devToolsQuery);
 
     const otherTechStacksQuery = '*[_type == "otherTechStacks"]';
     const otherTechStacks = await client.fetch(otherTechStacksQuery);
@@ -81,8 +81,9 @@ export const getServerSideProps = async () => {
     const experiences = await client.fetch(experiencesQuery);
   
     return {
-      props: { techStacks, versionControls, otherTechStacks, experiences }
+      props: { techStacks, devTools, otherTechStacks, experiences }
     }
+
   }
 
 export default Resume

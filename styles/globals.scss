@@ -141,11 +141,14 @@ li {
   height: 100vh;
   width: 100%;
   flex-direction: column;
-  margin: 5rem 0;
-  // padding: 2rem 0 0;
+  margin: 5rem 0 7rem;
   
   @media screen and (min-width: 450px) {
     padding: 0 2rem;
+  }
+
+  @media screen and (min-width: 497px) {
+    margin: 5rem 0 4rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -523,7 +526,6 @@ li {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding-top: 2rem;
     margin-right: 0rem;
 
     .app__header-badge {
@@ -1167,6 +1169,15 @@ li {
     .apex-with-margin-on-small {
       margin-right: 0;
     }
+  }
+}
+
+.dev-tool {
+  padding-top: .5rem;
+
+  img {
+    width: 30px;
+    height: 30px;
   }
 }
 
