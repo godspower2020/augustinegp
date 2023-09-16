@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { AiOutlineMobile, AiOutlineMail } from 'react-icons/ai';
 import { RiSendPlaneLine  } from 'react-icons/ri';
 import toast, { Toaster } from "react-hot-toast";
+import { TailSpin } from 'react-loader-spinner'
 import {motion} from 'framer-motion'
 
 const navLinks = [
@@ -42,8 +43,9 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     setLoading(true);
+    e.preventDefault()
 
     const mutations = [{
       create: {
@@ -105,21 +107,28 @@ const Contact = () => {
           transition={{duration: 0.4}}
           className='client__contact-details'
         >
-          <div className='line'>
-            <input className='p-text' placeholder='Your Name' autoComplete='off' name='name' value={name} onChange={handleChange} />
-            <input className='p-text' placeholder='Your Email' autoComplete='off' name='email' value={email} onChange={handleChange} />
-          </div>
-          <textarea className='p-text' placeholder='Message' name='message' value={message} onChange={handleChange} /> 
-          <div className='send-button'>
-            <button type='button' onClick={handleSubmit} >
-              {loading ? 'sending...' :
-              <>
-                <RiSendPlaneLine />
-                Send
-              </>               
-              }
-            </button>
-          </div>
+          <form className='contact-form' role="form"  onSubmit={handleSubmit}>
+            <div className='line'>
+              <input type="text" className='p-text' placeholder='Your Name' autoComplete='off' name='name' required value={name} onChange={handleChange} />
+              <input type="text" className='p-text' placeholder='Your Email' autoComplete='off' name='email' required value={email} onChange={handleChange} />
+            </div>
+            <textarea className='p-text' placeholder='Message' name='message' required value={message} onChange={handleChange} /> 
+            <div className='send-button'>
+              <button className='button' type='submit'>
+                {loading ? 
+                <div className='straight-button'>
+                  <TailSpin height="20" width="20" radius="1" color="#fff" ariaLabel="loading" wrapperStyle wrapperClass /> 
+                  <span>sending</span> 
+                </div>
+                :
+                <>
+                  <RiSendPlaneLine />
+                  Send
+                </>               
+                }
+              </button>
+            </div>
+          </form>
         </motion.div>
       </div>
       <div className='footer'>

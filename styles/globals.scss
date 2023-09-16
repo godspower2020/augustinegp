@@ -957,7 +957,6 @@ li {
       margin-top: 3rem;
       flex-direction: row;
       justify-content: space-evenly;
-      align-items: flex-start;
   }
 
   .admin-contact {
@@ -997,13 +996,12 @@ li {
 
   .client__contact-details{
       margin: 3rem 0 6rem;
-      padding: 0 .5rem;
+      padding: 0 1rem;
       display: flex;
       flex-direction: column;
 
       @media screen and (min-width: 980px) {
-          margin: 0 0 1rem;
-          width: 580px;
+          width: 620px;
 
           .line{
               display: flex;
@@ -1021,9 +1019,9 @@ li {
       }
       
       textarea {
-        resize: none;
-        overflow-y: scroll;
+        resize: none !important;
         opacity: .5;
+        width: 100% !important;
       }
 
       input,
@@ -1045,28 +1043,42 @@ li {
         }
       }
 
-      .send-button{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          
-          button{
-              display: flex;
-              align-items: center;
-              padding: 1rem 2rem;
-              background-color: var(--secondary-color);
-              color: var(--white-color);
-              cursor: pointer;
-              transition: all 0.5s ease-in-out;
+      .contact-form {
+        background-color: rgba(245, 244, 252, .7);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 53px 0 rgba(163, 204, 170, 0.1);
+
+        .send-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            button{
+                width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem 2rem;
+                background-color: var(--secondary-color);
+                color: var(--white-color);
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
   
-              &:hover{
-                  background-color: var(--gray-color);
-              }
-  
-              svg{
-                  margin-right: 8px;
-              }
-          }
+                .straight-button {
+                  display: flex;
+                  flex-direction: row;
+                }
+                
+                .straight-button span {
+                  padding-left: 15px;
+                }
+    
+                svg{
+                    margin-right: 8px;
+                }
+            }
+        }
       }
   }
 }
