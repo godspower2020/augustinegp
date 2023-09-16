@@ -78,14 +78,30 @@ const Contact = () => {
 
   return (
     <div id='Contact'>
-      <h2 className='head-text'>wanna say hello</h2>
-      <p className='app__flex contact-bold'>interested in working together ?</p>
+      {router.pathname == '/' ?
+        <>
+          <h2 className='head-text'>wanna say hello!</h2>
+          <p className='app__flex contact-bold'>You can always reach out.</p>
+        </>
+        :
+        <>
+          <h2 className='head-text'>wanna Work Together!</h2>
+          <p className='app__flex contact-bold'>interested in working together ?</p>
+        </>
+      }
       <div className='contact__form-container'>
         <motion.div 
           whileInView={{ x: [-200, 0], opacity: [0, 1] }}
           transition={{ duration: 0.4 }}
           className='admin-contact'
         >
+          <ul className='app__flex__justify-align-flex-start column'>
+            {navLinks.map((item, index) => (
+              <p className={`${router.pathname == item.path ? 'contact__menu_link-hide' : ''} contact__menu_link`}>
+                <a target={item.target} key={index} href={item.path}>{item.name}</a>
+              </p>
+            ))}
+          </ul>
           <div className='admin-contact-card'>
             <AiOutlineMobile />
             <a className='p-text' href='tel:+2347033903922'>+234 (703) 390 3922</a>
@@ -94,13 +110,6 @@ const Contact = () => {
             <AiOutlineMail /> 
             <a className='p-text' href='mailto: augustine07@gmail.com'>augustinegp07@gmail.com</a>
           </div>
-          <ul className='app__flex__justify-align-flex-start column'>
-            {navLinks.map((item, index) => (
-              <p className={`${router.pathname == item.path ? 'contact__menu_link-hide' : ''} contact__menu_link`}>
-                <a target={item.target} key={index} href={item.path}>{item.name}</a>
-              </p>
-            ))}
-          </ul>
         </motion.div>
         <motion.div 
           whileInView={{y: [120, 60, 0], opacity: [0,  0, 1]}}

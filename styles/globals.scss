@@ -970,21 +970,29 @@ li {
         .p-text{
             font-size: 1rem; 
             padding: 0 1rem;
-            color: #00acee;
-            text-decoration: none;
+            color: #6B7688;
+            text-decoration: none; 
+
+            &:hover {
+              color: #313bac;
+            }
         }
     } 
 
     .column {
       flex-direction: column;
-      padding-top: 3rem;
+      padding-bottom: 1.5rem;
 
       .contact__menu_link {
         padding: .9rem .9rem .9rem 0;
 
         a {
           text-decoration: none;
-          color: #0072B1;
+          color: #6B7688;
+
+          &:hover {
+            color: #313bac;
+          }
         }
       }
       
@@ -1027,27 +1035,35 @@ li {
       input,
       textarea,
       button{
-          padding: 1rem;
-          margin: 1.5rem 0;
-          border-radius: 10px;
-          outline: none;
-          font-size: 13px;
-          border: 1px solid var(--lightGray-color);
-          
-          &::placeholder {
-              color: var(--gray-color);
-          }
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border-radius: 10px;
+        outline: none;
+        font-size: 13px;
+        border: 1px solid var(--lightGray-color);
+        
+        &::placeholder {
+            color: var(--gray-color);
+        }
 
-          @media screen and (min-width: 980px) {
-            font-size: 17px;
+        @media screen and (min-width: 980px) {
+          font-size: 17px;
         }
       }
 
       .contact-form {
         background-color: rgba(245, 244, 252, .7);
         border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 10px 53px 0 rgba(163, 204, 170, 0.1);
+        padding: 10px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=0, Color=#DEDEDE)";/*IE 8*/
+        -moz-box-shadow: 0 0 2px 2px rgba(222,222,222,0.6);/*FF 3.5+*/
+        -webkit-box-shadow: 0 0 2px 2px rgba(222,222,222,0.6);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+        box-shadow: 0 0 2px 2px rgba(222,222,222,0.6);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+        filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color=#DEDEDE); /*IE 5.5-7*/
+        
+        @media screen and (min-width: 980px) {
+          padding: 30px;
+        }
 
         .send-button{
             display: flex;
@@ -1088,7 +1104,7 @@ li {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 4rem 0 1rem;
+  padding: 6rem 0 1rem;
   
   p {
     font-size: 1.2rem;
