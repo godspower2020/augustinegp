@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import abouts from './abouts'
 import contact from './contact'
 import experiences from './experiences'
+import majors from './majors'
 import heroItems from './heroItems'
 import heroTitles from './heroTitles'
 import otherTechStacks from './otherTechStacks'
@@ -28,6 +29,7 @@ export default createSchema({
     abouts,
     contact,
     experiences,
+    majors,
     heroItems,
     heroTitles,
     otherTechStacks,

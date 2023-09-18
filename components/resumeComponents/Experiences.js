@@ -11,7 +11,7 @@ const Experiences = ({experience}) => {
           <header>
             <h3 style={{color: work.color}}>{work.company} - <span className='inherent-color'>{work.position}</span></h3>
             <span className='stop'>{experience.year}</span>
-          </header> 
+          </header>  
           <p className='work-info'>{work.desc}</p>
         </>
       ))}

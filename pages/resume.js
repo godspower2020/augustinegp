@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { AiFillLinkedin, AiOutlineDownload } from 'react-icons/ai';
 
 import{ client } from '../lib/sanityClient';
-import { DevTools, TechStack, TechnicalSkills, OtherTechStacks, Experiences } from '../components/resumeComponents';
+import { DevTools, TechStack, TechnicalSkills, OtherTechStacks, Experiences, Majors } from '../components/resumeComponents';
 
-const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experiences}) => {
+const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experiences, majors}) => {
   return (
     <div id='resume'>
       <Head>
@@ -33,7 +33,7 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
                     <h3 style={{ wordWrap: 'breakWord' }}>Core Technology:</h3>
                     {techStacks.map((techStack) => <TechStack key={techStack._id} techStack={techStack} /> )}
                   </div>
-                  <div className='lh-1-5 mb-2'>
+                  <div className='lh-1-8 mb-2'>
                     <h3 style={{ wordWrap: 'breakWord' }}>Technical Skills:</h3>
                     {technicalSkills.map((technicalSkill) => <TechnicalSkills key={technicalSkill._id} technicalSkill={technicalSkill} /> )}
                   </div>
@@ -43,7 +43,7 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
                   <h3>Tools:</h3>
                   {devTools?.map((devTool) => <DevTools key={devTool._id} devTool={devTool} />)}
                 </div>
-                <div className='lh-1-5 mb-2'>
+                <div className='lh-1-8 mb-2'>
                   <h3>Others:</h3>
                   {otherTechStacks.map((otherTechStack) => <OtherTechStacks key={otherTechStack._id} otherTechStack={otherTechStack} /> )}
                 </div>
@@ -56,13 +56,19 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
               <p className='some-margins'>Frontend Engineer valued for driving high-performance accessible web experiences. I design quality, user-friendly and scalable products providing a satisfactory user experience with no issues, errors, or downtime.</p>
             </div>
             {/* <hr /> */}
-            <div className='experience__stack'>
+            <div className='experience__stack mb-5'>
               <h2>Experiences</h2>
               <p className='small-margin'>I’ve worked on a handful of web projects over the past 6 years, some of which were for the following organizations:</p>
           
               <ul className='companies'>
                 {experiences?.map((experience) => <Experiences key={experience._id} experience={experience} /> )}
               </ul>
+            </div>
+            <div classNName='education_stack'>
+              <h2>Education</h2>
+              <div>
+                {majors?.map((major) => <Majors key={major._id} major={major} /> )}
+              </div>
             </div>
         </div>
         </div>
@@ -86,6 +92,9 @@ export const getServerSideProps = async () => {
   
     const experiencesQuery = '*[_type == "experiences"]';
     const experiences = await client.fetch(experiencesQuery);
+
+    const majorsQuery = '*[_type == "majors"]';
+    const majors = await client.fetch(majorsQuery);
   
     return {
       props: { techStacks, technicalSkills, devTools, otherTechStacks, experiences }
