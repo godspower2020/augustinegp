@@ -64,8 +64,8 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
                 {experiences?.map((experience) => <Experiences key={experience._id} experience={experience} /> )}
               </ul>
             </div>
-            <div classNName='education_stack'>
-              <h2>Education</h2>
+            <div className='education_stack'>
+              <h2 className='mb-1'>Education</h2>
               <div>
                 {majors?.map((major) => <Majors key={major._id} major={major} /> )}
               </div>
@@ -97,7 +97,7 @@ export const getServerSideProps = async () => {
     const majors = await client.fetch(majorsQuery);
   
     return {
-      props: { techStacks, technicalSkills, devTools, otherTechStacks, experiences }
+      props: { techStacks, technicalSkills, devTools, otherTechStacks, experiences, majors }
     }
 
   }

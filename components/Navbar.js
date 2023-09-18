@@ -47,7 +47,7 @@ const Navbar = () => {
       <div className="app__Navbar-logo app__flex__justify-content-flex-start">
         <Link href='/' legacyBehavior>
           <a>
-            <h1 className='blue'>A</h1>
+            <h1 className='blue'>A</h1>  
           </a>
         </Link>
       </div>

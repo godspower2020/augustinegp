@@ -14,6 +14,11 @@ export default {
             type:'string'
         },  
         {
+            name:'year',
+            title:'Year',
+            type:'string'
+        },  
+        {
             name:'school',
             title:'School',
             type:'string'

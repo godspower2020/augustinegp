@@ -3,7 +3,7 @@ import React from 'react'
 const TechStack = ({techStack}) => {
 
   return (
-    <div className=''>
+    <div className='tech-stack'>
       <p style={{color: techStack.color}}>{techStack.name}</p>
     </div>
   )
