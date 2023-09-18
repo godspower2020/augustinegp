@@ -73,11 +73,19 @@ li {
 }
 
 .lh-1-5 {
-  line-height: 1.5rem;
+  line-height: 1.3rem;
+
+  @media screen and (min-width: 791px) {
+    line-height: 1.5rem;
+  }
 }
 
 .lh-1-8 {
-  line-height: 1.8rem;
+  line-height: 1.4rem;
+
+  @media screen and (min-width: 791px) {
+    line-height: 1.8rem;
+  }
 }
 
 .app {
@@ -363,10 +371,7 @@ li {
       font-size: 2.8rem;
       font-weight: 700;
       letter-spacing: none;
-      
-      .blue {
-        color: var(--secondary-color) !important;
-      }
+      color: var(--secondary-color) !important;
     }
   }
 }
@@ -417,7 +422,7 @@ li {
 }
 
 .app__Navbar-menu {
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
@@ -446,7 +451,11 @@ li {
     width: 330px;
     height: 460px;
     transform-origin: top right;
-    box-shadow: 0 10px 53px 0 rgba(163, 204, 170, 0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=0, Color=#C3C3DE)";/*IE 8*/
+    -moz-box-shadow: 0 0 5px rgba(195,195,222,0.6);/*FF 3.5+*/
+    -webkit-box-shadow: 0 0 5px rgba(195,195,222,0.6);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 0 0 5px rgba(195,195,222,0.6);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color=#C3C3DE); /*IE 5.5-7*/
   }  
 
   @media screen and (min-width: 850px) {
@@ -1221,11 +1230,19 @@ li {
 
 .dev-tool {
   display: flex;
-  padding-top: .7rem;
+  padding-top: .5rem;
+
+  @media screen and (min-width: 791px) {
+    padding-top: .7rem;
+  }
 
   img {
-    height: 30px;
+    height: 24px;
     margin-right: 1rem;
+
+    @media screen and (min-width: 791px) {
+      height: 30px;
+    }
   }
 }
 
@@ -1250,10 +1267,11 @@ li {
     
     li {
       font-size: 15px;
-      line-height: 1.81rem;
+      line-height: 1.5rem;
 
       @media screen and (min-width: 791px) {
         font-size: 16.4px;
+        line-height: 1.81rem;
       }
     }
   }
@@ -1420,7 +1438,11 @@ li {
     background-color: #fff;
     color: #000;
     transition: all 0.3s ease;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=0, Color=#C3C3DE)";/*IE 8*/
+    -moz-box-shadow: 0 0 5px rgba(195,195,222,0.6);/*FF 3.5+*/
+    -webkit-box-shadow: 0 0 5px rgba(195,195,222,0.6);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 0 0 5px rgba(195,195,222,0.6);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color=#C3C3DE); /*IE 5.5-7*/
 
     @media screen and (min-width: 600px) {
       width: 370px;

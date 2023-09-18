@@ -25,13 +25,19 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState('app__Navbar')
   const [active, setActive] = useState('app__Navbar-menu')
   const [toggleIcon, setToggleIcon] = useState('nav__toggler')
-  // const [isOpen, setIsOpen] = useState(false),
 
   const router = useRouter()
+
+  const outsideMenuClick = () => {
+    window.scrollY && active  
+    window.scrollY && toggleIcon  
+  }
   
   useEffect(() => {
+    outsideMenuClick()
+
     router.pathname == '/' ? setNavbar('app__Navbar app__Navbar-fixed') : setNavbar('app__Navbar')
-  }, []);
+  }, [outsideMenuClick]);
 
   const navToggle = () => {
     // show & unshow the nav menu
@@ -47,7 +53,7 @@ const Navbar = () => {
       <div className="app__Navbar-logo app__flex__justify-content-flex-start">
         <Link href='/' legacyBehavior>
           <a>
-            <h1 className='blue'>A</h1>  
+            <h1>A</h1>  
           </a>
         </Link>
       </div>
