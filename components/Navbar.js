@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { motion } from 'framer-motion';
-
-const navLinks = [
+ 
+const contactLinks = [
   { 
     name: 'Home', 
     path: '/',
@@ -47,7 +47,7 @@ const Navbar = () => {
       <div className="app__Navbar-logo app__flex__justify-content-flex-start">
         <Link href='/' legacyBehavior>
           <a>
-            <h1><span className='blue'>A</span></h1>
+            <h1 className='blue'>A</h1>
           </a>
         </Link>
       </div>
@@ -55,14 +55,14 @@ const Navbar = () => {
       <div className={`${active}`}> 
         <div className='inner__flex'>
           <ul className='app__flex__justify-align-flex-start'>
-            {navLinks.map((item, index) => (
+            {contactLinks.map((item, index) => (
               <motion.p 
                 className={`${router.pathname == item.path ? 'menu_link-hide' : ''} menu_link`}
                 whileInView={{y: [120, 60, 0], opacity: [0,  0, 1]}}
                 transition={{duration: 0.5}}
               >
-                <Link target={item.target} key={index} href={item.path} legacyBehavior>
-                  <a>{item.name}</a>
+                <Link key={index} href={item.path} legacyBehavior>
+                  <a target={item.target}>{item.name}</a>
                 </Link>
               </motion.p>
             ))}

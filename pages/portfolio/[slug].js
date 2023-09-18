@@ -58,7 +58,7 @@ const PortfolioDetails = ({ portfolio: {isAvailable, description, projectLink, c
             </div>
           </div>
           
-          <div>
+          <div className='desc-client-works-website'>
             <div className="details-text-company-works">
               <div className="details-text">
                 <p>{description}</p>
@@ -80,7 +80,7 @@ const PortfolioDetails = ({ portfolio: {isAvailable, description, projectLink, c
             </div>
             <div className="project__code-link">
               <span className='bold'>Website</span>
-              <p>Visit <span><a href={projectLink}>{title}</a></span></p>
+              <p>Visit <span><a target='_blank' href={projectLink}>{title}</a></span></p>
             </div>
           </div>
         </div>

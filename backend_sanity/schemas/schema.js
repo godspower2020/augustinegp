@@ -13,6 +13,7 @@ import portfolios from './portfolios'
 import skills from './skills'
 import techStacks from './techStacks'
 import devTools from './devTools'
+import technicalSkills from './technicalSkills'
 import testimonials from './testimonials'
 import workExperience from './workExperience'
 import startYearWorkExperience from './startYearWorkExperience'
@@ -34,6 +35,7 @@ export default createSchema({
     skills,
     techStacks,
     devTools,
+    technicalSkills,
     testimonials,
     workExperience,
     startYearWorkExperience

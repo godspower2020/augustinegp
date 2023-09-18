@@ -98,7 +98,9 @@ const Contact = () => {
           <ul className='app__flex__justify-align-flex-start column'>
             {navLinks.map((item, index) => (
               <p className={`${router.pathname == item.path ? 'contact__menu_link-hide' : ''} contact__menu_link`}>
-                <a target={item.target} key={index} href={item.path}>{item.name}</a>
+                <Link key={index} href={item.path}>
+                  <a target={item.target}>{item.name}</a>
+                </Link>
               </p>
             ))}
           </ul>
@@ -118,10 +120,10 @@ const Contact = () => {
         >
           <form className='contact-form' role="form"  onSubmit={handleSubmit}>
             <div className='line'>
-              <input type="text" className='p-text' placeholder='Your Name' autoComplete='off' name='name' required value={name} onChange={handleChange} />
-              <input type="text" className='p-text' placeholder='Your Email' autoComplete='off' name='email' required value={email} onChange={handleChange} />
+              <input type="text" placeholder='Your Name' autoComplete='off' name='name' required value={name} onChange={handleChange} />
+              <input type="text" placeholder='Your Email' autoComplete='off' name='email' required value={email} onChange={handleChange} />
             </div>
-            <textarea className='p-text' placeholder='Message' name='message' required value={message} onChange={handleChange} /> 
+            <textarea placeholder='Message' name='message' required value={message} onChange={handleChange} /> 
             <div className='send-button'>
               <button className='button' type='submit'>
                 {loading ? 

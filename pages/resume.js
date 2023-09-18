@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { AiFillLinkedin, AiOutlineDownload } from 'react-icons/ai';
 
 import{ client } from '../lib/sanityClient';
-import { DevTools, TechStack, OtherTechStacks, Experiences } from '../components/resumeComponents';
+import { DevTools, TechStack, TechnicalSkills, OtherTechStacks, Experiences } from '../components/resumeComponents';
 
-const Resume = ({techStacks, devTools, otherTechStacks, experiences}) => {
+const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experiences}) => {
   return (
     <div id='resume'>
       <Head>
@@ -30,9 +30,13 @@ const Resume = ({techStacks, devTools, otherTechStacks, experiences}) => {
                   <p><a href='phone: +2347033903922'>+234 (703) 390 3922</a></p>
                 </div>
                   <div className='lh-1-5 mb-2'>
-                  <h3 style={{ wordWrap: 'breakWord' }}>Core Technology:</h3>
-                  {techStacks.map((techStack) => <TechStack key={techStack._id} techStack={techStack} /> )}
-                </div>
+                    <h3 style={{ wordWrap: 'breakWord' }}>Core Technology:</h3>
+                    {techStacks.map((techStack) => <TechStack key={techStack._id} techStack={techStack} /> )}
+                  </div>
+                  <div className='lh-1-5 mb-2'>
+                    <h3 style={{ wordWrap: 'breakWord' }}>Technical Skills:</h3>
+                    {technicalSkills.map((technicalSkill) => <TechnicalSkills key={technicalSkill._id} technicalSkill={technicalSkill} /> )}
+                  </div>
             </div>
             <div className='apex'>
                 <div className='lh-1-5 mb-2'>
@@ -71,6 +75,9 @@ export const getServerSideProps = async () => {
     const query = '*[_type == "techStacks"]';
     const techStacks = await client.fetch(query);
 
+    const technicalSkillsquery = '*[_type == "technicalSkills"]';
+    const technicalSkills = await client.fetch(technicalSkillsquery);
+
     const devToolsQuery = '*[_type == "devTools"]';
     const devTools = await client.fetch(devToolsQuery);
 
@@ -81,7 +88,7 @@ export const getServerSideProps = async () => {
     const experiences = await client.fetch(experiencesQuery);
   
     return {
-      props: { techStacks, devTools, otherTechStacks, experiences }
+      props: { techStacks, technicalSkills, devTools, otherTechStacks, experiences }
     }
 
   }
