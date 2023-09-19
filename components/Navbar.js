@@ -30,10 +30,12 @@ const Navbar = () => {
   const menuRef = useRef()
   
   useEffect(() => {
+    router.pathname == '/' ? setNavbar('app__Navbar app__Navbar-fixed') : setNavbar('app__Navbar')
+
     const outsideMenuClick = (e) => {
       if(!menuRef.current.contains(e.target)) {
-        setActive('app__Navbar-menu')
-        setToggleIcon('nav__toggler')
+        active === 'app__Navbar-menu' && setActive('app__Navbar-menu')
+        toggleIcon === 'nav__toggler' && setToggleIcon('nav__toggler')
         console.log(menuRef.current);
       }
 
@@ -43,8 +45,6 @@ const Navbar = () => {
     return() => {
       document.removeEventListener("mousedown", outsideMenuClick)
     }
-    
-    router.pathname == '/' ? setNavbar('app__Navbar app__Navbar-fixed') : setNavbar('app__Navbar')
   }, []);
 
   const navToggle = () => {
