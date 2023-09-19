@@ -422,7 +422,7 @@ li {
 }
 
 .app__Navbar-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -444,6 +444,7 @@ li {
   }
 
   @media screen and (min-width: 701px) {
+    position: absolute;
     top: 1.5rem;
     bottom: 0;
     right: .5rem;

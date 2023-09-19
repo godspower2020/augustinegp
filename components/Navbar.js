@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { motion } from 'framer-motion';
@@ -27,17 +27,25 @@ const Navbar = () => {
   const [toggleIcon, setToggleIcon] = useState('nav__toggler')
 
   const router = useRouter()
-
-  const outsideMenuClick = () => {
-    window.scrollY && active  
-    window.scrollY && toggleIcon  
-  }
+  const menuRef = useRef()
   
   useEffect(() => {
-    outsideMenuClick()
+    const outsideMenuClick = (e) => {
+      if(!menuRef.current.contains(e.target)) {
+        setActive('app__Navbar-menu')
+        setToggleIcon('nav__toggler')
+        console.log(menuRef.current);
+      }
 
+      document.addEventListener("mousedown", outsideMenuClick)
+    }
+
+    return() => {
+      document.removeEventListener("mousedown", outsideMenuClick)
+    }
+    
     router.pathname == '/' ? setNavbar('app__Navbar app__Navbar-fixed') : setNavbar('app__Navbar')
-  }, [outsideMenuClick]);
+  }, []);
 
   const navToggle = () => {
     // show & unshow the nav menu
@@ -58,7 +66,7 @@ const Navbar = () => {
         </Link>
       </div>
       
-      <div className={`${active}`}> 
+      <div className={`${active}`} ref={menuRef}> 
         <div className='inner__flex'>
           <ul className='app__flex__justify-align-flex-start'>
             {contactLinks.map((item, index) => (
