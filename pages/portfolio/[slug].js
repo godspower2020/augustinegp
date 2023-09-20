@@ -2,8 +2,9 @@ import React, {useState} from 'react'
 import { motion } from 'framer-motion';
 import Link from 'next/link'
 import Head from 'next/head'
+import Script from 'next/script'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
-import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 import{ client, urlFor } from '../../lib/sanityClient';
 import { Navbar, Contact } from '../../components'
@@ -19,6 +20,18 @@ const PortfolioDetails = ({ portfolio: {isAvailable, description, projectLink, c
     <div className='grey-bg'>
       <Head>
         <title>{slug.current} - Augustine's Portfolio</title>
+
+        {/* Google Analytics tag (gtag.js) */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-S4XQ18WP6E" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', 'G-S4XQ18WP6E);
+          `}
+        </Script>
       </Head>
       <Navbar />
       {isAvailable ? 
@@ -35,14 +48,14 @@ const PortfolioDetails = ({ portfolio: {isAvailable, description, projectLink, c
           <div>
             <div className="portfolio-detail-image">
               <div className='slide' onClick={() => handleClick(index === 0 ? imgUrl.length - 1 : index - 1)}>
-                <IoMdArrowDropleft />
+                <FiArrowLeft />
               </div>
               <img 
                 className="portfolio-detail-img" 
                 src={urlFor(imgUrl && imgUrl[index])} 
               />
               <div className='slide' onClick={() => handleClick(index === imgUrl.length - 1 ? 0 : index + 1)}>
-                <IoMdArrowDropright />
+                <FiArrowRight />
               </div>
             </div>
             <div className="small-images-container">

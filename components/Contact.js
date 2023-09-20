@@ -129,7 +129,7 @@ const Contact = () => {
                 {loading ? 
                 <div className='straight-button'>
                   <TailSpin height="20" width="20" radius="1" color="#fff" ariaLabel="loading" wrapperStyle wrapperClass /> 
-                  <span>sending</span> 
+                  <span>sending...</span> 
                 </div>
                 :
                 <>
