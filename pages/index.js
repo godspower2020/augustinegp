@@ -82,14 +82,14 @@ const Home = ( {classNames, heroTitles, heroItems, abouts, skills, experience, t
         <title>Augustine Godspower | Frontend Developer & UI/UX expert</title>
 
         {/* Google Analytics tag (gtag.js) */}
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${`process.env.NEXT_PULIC_GOOGLE_ANALYTICS`}`} />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-S4XQ18WP6E" />
         <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
   
-            gtag('config', ${`process.env.NEXT_PULIC_GOOGLE_ANALYTICS`});
+            gtag('config', 'G-S4XQ18WP6E);
           `}
         </Script>
       </Head>
