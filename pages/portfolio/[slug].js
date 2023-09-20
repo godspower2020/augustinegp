@@ -34,14 +34,14 @@ const PortfolioDetails = ({ portfolio: {isAvailable, description, projectLink, c
         <div className='portfolio-detail-container'>
           <div>
             <div className="portfolio-detail-image">
-              <div className='' onClick={() => handleClick(index === 0 ? imgUrl.length - 1 : index - 1)}>
+              <div className='slide' onClick={() => handleClick(index === 0 ? imgUrl.length - 1 : index - 1)}>
                 <IoMdArrowDropleft />
               </div>
               <img 
                 className="portfolio-detail-img" 
                 src={urlFor(imgUrl && imgUrl[index])} 
               />
-              <div className='' onClick={() => handleClick(index === imgUrl.length - 1 ? 0 : index + 1)}>
+              <div className='slide' onClick={() => handleClick(index === imgUrl.length - 1 ? 0 : index + 1)}>
                 <IoMdArrowDropright />
               </div>
             </div>

@@ -44,10 +44,11 @@ a {
 
 p,
 span {
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   font-size: 14.4px;
 
   @media screen and (min-width: 769px) {
+    letter-spacing: 2px;
     font-size: 16px;
   }
 }
@@ -1463,6 +1464,10 @@ li {
         margin: .2rem;
       }
     }
+
+    h4 {
+      margin-top: 50px;
+    }
   }
 }
 
@@ -1470,32 +1475,13 @@ li {
   cursor: pointer;
   width: 100%;
   height: 200px;
+  border-radius: 0.5rem;
   position: relative;
   background-color: var(--primary-color);
 
   img {
     width: 40%;
     object-fit: cover;
-  }
-}
-
-.app__work-content {
-  padding: 0.5rem;
-  width: 100%;
-  position: relative;
-  flex-direction: column;
-
-  span {
-    padding: .7rem;
-    letter-spacing: normal !important;
-  }
-
-  .app__work-tag {
-    position: absolute;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    background-color: #fff;
-    top: -25px;
   }
 }
 
@@ -1575,16 +1561,28 @@ a {
     align-items: center;
     margin: 0 auto;
 
+    .slide {
+      height: 26px;
+      width: 26px;
+      border-radius: 100%;
+      border: .1rem solid var(--secondary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     svg {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      width: 100%;
       cursor: pointer;
+      color: var(--secondary-color);
     }
     
     .portfolio-detail-img{
       width: 76%;
       transition: .3s ease-in-out;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
-      margin: 0 .3rem;
+      margin: 0 .6rem;
 
       img {
         width: 100%;

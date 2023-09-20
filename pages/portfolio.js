@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
 import { motion } from 'framer-motion';
 
 import{ client } from '../lib/sanityClient';
@@ -34,6 +35,18 @@ const Portfolio = ({portfolios}) => {
     <div id='portfolio'>
       <Head>
         <title>My Portfolio - works</title>
+
+        {/* Google Analytics tag (gtag.js) */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${`process.env.NEXT_PULIC_GOOGLE_ANALYTICS`}`} />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', ${`process.env.NEXT_PULIC_GOOGLE_ANALYTICS`});
+          `}
+        </Script>
       </Head>
       <div className='app'>
         <Navbar />

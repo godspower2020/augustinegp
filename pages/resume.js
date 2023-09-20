@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
 import { AiFillLinkedin, AiOutlineDownload } from 'react-icons/ai';
 
 import{ client } from '../lib/sanityClient';
@@ -10,6 +11,18 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
     <div id='resume'>
       <Head>
         <title>My Resume - skills & experiences</title>
+
+        {/* Google Analytics tag (gtag.js) */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${`process.env.NEXT_PULIC_GOOGLE_ANALYTICS`}`} />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', ${`process.env.NEXT_PULIC_GOOGLE_ANALYTICS`});
+          `}
+        </Script>
       </Head>
       <div className='app__flex__justify-align-flex-start resume app__whitebg'>
         {/* <aside>

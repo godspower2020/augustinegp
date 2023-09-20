@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
 import Slider from "react-slick";
 import { useRouter } from "next/router";
 import {motion} from 'framer-motion'
@@ -79,6 +80,18 @@ const Home = ( {classNames, heroTitles, heroItems, abouts, skills, experience, t
     <div id='home' className='home'>
       <Head>
         <title>Augustine Godspower | Frontend Developer & UI/UX expert</title>
+
+        {/* Google Analytics tag (gtag.js) */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${`process.env.NEXT_PULIC_GOOGLE_ANALYTICS`}`} />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', ${`process.env.NEXT_PULIC_GOOGLE_ANALYTICS`});
+          `}
+        </Script>
       </Head>
       <div id='noscroll' className={`app ${classNames}`}>
         <Navbar />
