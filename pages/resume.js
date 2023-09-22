@@ -13,15 +13,20 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
         <title>My Resume - skills & experiences</title>
 
         {/* Google Analytics tag (gtag.js) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-S4XQ18WP6E" />
-        <Script id="google-analytics">
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+
+        <Script strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-  
-            gtag('config', 'G-S4XQ18WP6E);
-          `}
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            page_path: window.location.pathname,
+            });
+        `}
         </Script>
       </Head>
       <div className='app__flex__justify-align-flex-start resume app__whitebg'>
