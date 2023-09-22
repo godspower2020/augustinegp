@@ -82,7 +82,7 @@ const Home = ( {classNames, heroTitles, heroItems, abouts, skills, experience, t
         <title>Augustine Godspower | Frontend Developer & UI/UX expert</title>
 
         {/* Google Analytics tag (gtag.js) */}
-        <Script
+        {/* <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
@@ -96,7 +96,7 @@ const Home = ( {classNames, heroTitles, heroItems, abouts, skills, experience, t
             page_path: window.location.pathname,
             });
         `}
-        </Script>
+        </Script> */}
 
       </Head>
       <div id='noscroll' className={`app ${classNames}`}>

@@ -37,7 +37,7 @@ const Portfolio = ({portfolios}) => {
         <title>My Portfolio - works</title>
 
         {/* Google Analytics tag (gtag.js) */}
-        <Script
+        {/* <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
@@ -51,7 +51,7 @@ const Portfolio = ({portfolios}) => {
             page_path: window.location.pathname,
             });
         `}
-        </Script>
+        </Script> */}
       </Head>
       <div className='app'>
         <Navbar />
