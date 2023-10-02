@@ -10,7 +10,7 @@ const navDots = [
   //   name: 'Spotlights',
   // },
   {
-    name: 'Experiences',
+    name: 'Experiences', 
     // tabindex:'1'
   },
   {

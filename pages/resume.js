@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import Script from 'next/script'
 import { AiFillLinkedin, AiOutlineDownload } from 'react-icons/ai';
 
 import{ client } from '../lib/sanityClient';
@@ -11,23 +10,6 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
     <div id='resume'>
       <Head>
         <title>My Resume - skills & experiences</title>
-
-        {/* Google Analytics tag (gtag.js) */}
-        {/* <Script
-          strategy="lazyOnload"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        />
-
-        <Script strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-            page_path: window.location.pathname,
-            });
-        `}
-        </Script> */}
       </Head>
       <div className='app__flex__justify-align-flex-start resume app__whitebg'>
         {/* <aside>
@@ -71,12 +53,12 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
             <div className='name__stack mb-5'>
               <h1 className='mb-0-5'>AUGUSTINE <br/> GODSPOWER</h1>
               <h2>Frontend Engineer | UI/UX Designer | Cryptoprenure</h2>
-              <p className='some-margins'>Frontend Engineer valued for driving high-performance accessible web experiences. I design quality, user-friendly and scalable products providing a satisfactory user experience with no issues, errors, or downtime.</p>
+              <p className='some-margins'>full-stack software Engineer <span><a href='https://carburant.io/' target="_blank">@carburant</a></span>. experienced in ReactJS, NodeJS and TypeScript. valued for driving high-performance accessible web experiences. I design quality, user-friendly and scalable products providing a satisfactory user experience with no issues, errors, or downtime. Working remotely from an oil producing, but beautiful country named Nigeria.</p>
             </div>
             {/* <hr /> */}
             <div className='experience__stack mb-5'>
               <h2>Experiences</h2>
-              <p className='small-margin'>I’ve worked on a handful of web projects over the past 6 years, some of which were for the following organizations:</p>
+              <p className='small-margin'>I’ve worked on a handful of web projects over the past 6 years, from design to implementing reusable components. these functions were for the following organizations:</p>
           
               <ul className='companies'>
                 {experiences?.map((experience) => <Experiences key={experience._id} experience={experience} /> )}

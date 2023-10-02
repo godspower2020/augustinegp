@@ -7,7 +7,7 @@ const SocialMedia = () => {
       <div>
           <a href='https://twitter.com/AugustineGods15' target='_blank'><BsTwitter /></a>  
       </div>
-      <div>
+      <div> 
           <a href='https://www.instagram.com/godspower_augustine/' target='_blank'><BsInstagram /></a>    
       </div>
       <div>

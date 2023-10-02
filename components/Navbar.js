@@ -115,7 +115,7 @@ const Navbar = () => {
             </motion.a>
             <motion.a 
               style={{color: '#0072B1'}} 
-              href='https://www.linkedin.com/in/augustine-godspower-523a2b1a4/' 
+              href='https://www.linkedin.com/in/augustine-godspower-523a2b1a4/'  
               target='_blank'
               whileInView={{y: [120, 60, 0], opacity: [0,  0, 1]}}
               transition={{duration: 1.2}}

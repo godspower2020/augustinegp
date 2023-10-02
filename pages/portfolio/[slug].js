@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { motion } from 'framer-motion';
 import Link from 'next/link'
 import Head from 'next/head'
-import Script from 'next/script'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
@@ -18,24 +17,6 @@ const PortfolioDetails = ({ portfolio: {isAvailable, description, projectLink, c
 
   return (
     <div className='grey-bg'>
-
-      {/* Google Analytics tag (gtag.js) */}
-      {/* <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-          page_path: window.location.pathname,
-          });
-      `}
-      </Script> */}
-
       <Head>
         <title>{slug.current} - Augustine's Portfolio</title>
       </Head>

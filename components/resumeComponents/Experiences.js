@@ -15,9 +15,7 @@ const Experiences = ({experience}) => {
           <p className='work-info'>{work.desc}</p>
         </>
       ))}
-      <ul 
-        className='points'
-      >  
+      <ul className='points'>  
         {experience?.points?.map((item, index) => (
           <li key={index} className='huge-dots'>{item}</li>         
         ))}
