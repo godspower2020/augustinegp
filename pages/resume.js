@@ -53,7 +53,7 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
             <div className='name__stack mb-5'>
               <h1 className='mb-0-5'>AUGUSTINE <br/> GODSPOWER</h1>
               <h2>Frontend Engineer | UI/UX Designer | Cryptoprenure</h2>
-              <p className='some-margins'>full-stack software Engineer <span><a href='https://carburant.io/' target="_blank">@carburant</a></span>. experienced in ReactJS, NodeJS and TypeScript. valued for driving high-performance accessible web experiences. I design quality, user-friendly and scalable products providing a satisfactory user experience with no issues, errors, or downtime. Working remotely from an oil producing, but beautiful country named Nigeria.</p>
+              <p className='some-margins'>full-stack software Engineer <span><a href='https://carburant.io/' target="_blank">@carburant.io</a></span>. experienced in ReactJS, NodeJS and TypeScript. valued for driving high-performance accessible web experiences. I design quality, user-friendly and scalable products providing a satisfactory user experience with no issues, errors, or downtime. Working remotely from an oil producing, but beautiful country named Nigeria.</p>
             </div>
             {/* <hr /> */}
             <div className='experience__stack mb-5'>
