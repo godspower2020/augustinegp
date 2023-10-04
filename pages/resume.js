@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { AiFillLinkedin, AiOutlineDownload } from 'react-icons/ai';
 
 import{ client } from '../lib/sanityClient';
-import { DevTools, TechStack, TechnicalSkills, OtherTechStacks, Experiences, Majors } from '../components/resumeComponents';
+import { DevTools, TechStack, TechnicalSkills, OtherTechStacks, Experiences, Majors, Projects } from '../components/resumeComponents';
 
-const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experiences, majors}) => {
+const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experiences, majors, projects}) => {
   return (
     <div id='resume'>
       <Head>
@@ -58,16 +58,22 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
             {/* <hr /> */}
             <div className='experience__stack mb-5'>
               <h2>Experiences</h2>
-              <p className='small-margin'>I’ve worked on a handful of web projects over the past 6 years, from design to implementing reusable components. these functions were for the following organizations:</p>
+              <p className='small-margin'>I’ve worked on a handful of web projects over the past 6 years, from design to implementing reusable components. I played huge roles on various projects and had significant accomplishment for the following organizations:</p>
           
               <ul className='companies'>
                 {experiences?.map((experience) => <Experiences key={experience._id} experience={experience} /> )}
               </ul>
             </div>
-            <div className='education_stack'>
+            <div className='education__stack mb-5'>
               <h2 className='mb-1'>Education</h2>
               <div>
                 {majors?.map((major) => <Majors key={major._id} major={major} /> )}
+              </div>
+            </div>
+            <div className='project__stack'>
+              <h2 className='mb-1'>Projects</h2>
+              <div>
+                {projects?.map((project) => <Projects key={project._id} project={project} /> )}
               </div>
             </div>
         </div>
@@ -95,9 +101,12 @@ export const getServerSideProps = async () => {
 
     const majorsQuery = '*[_type == "majors"]';
     const majors = await client.fetch(majorsQuery);
+
+    const projectsQuery = '*[_type == "projects"]';
+    const projects = await client.fetch(projectsQuery);
   
     return {
-      props: { techStacks, technicalSkills, devTools, otherTechStacks, experiences, majors }
+      props: { techStacks, technicalSkills, devTools, otherTechStacks, experiences, majors, projects }
     }
 
   }

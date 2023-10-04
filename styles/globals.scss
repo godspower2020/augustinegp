@@ -1281,7 +1281,7 @@ li {
   }
 
   .small-margin {
-      margin: 1rem 0 1.5rem 0 !important;
+      margin: 1rem 0 2.5rem 0 !important;
   }
 
   .name__stack h1 {
@@ -1343,26 +1343,26 @@ li {
 
   .company header {
     margin: 0 0 .8rem 0 !important;
-}
-
-@media screen and (min-width: 1190px) {  
-  .name__stack p {
-      margin: 3rem 15rem 0 0;
   }
 
-  .company header {
-    display: flex;
-    justify-content: space-between;
-  }
+  @media screen and (min-width: 1190px) {  
+    .name__stack p {
+        margin: 3rem 15rem 0 0;
+    }
 
-  .company .work-info {
-    max-width: 60%;
-    
-    li {
-        margin-bottom: .5rem;
+    .company header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .company .work-info {
+      max-width: 60%;
+      
+      li {
+          margin-bottom: .5rem;
+      }
     }
   }
-}
 
   .company .huge-dots {
     margin-bottom: 0.4rem;
@@ -1378,6 +1378,22 @@ li {
       display: inline-block;
       filter: contrast(1.2);
       background: currentColor;
+  }
+
+  .project__stack {
+    margin-right: 20%;
+
+    .projects {
+      span {
+        letter-spacing: 0;
+      }
+
+      .name {
+        color: rgba(3, 3, 3, .7) !important;
+        font-weight: bold;
+        font-size: unset;
+      }
+    }
   }
 }
 
