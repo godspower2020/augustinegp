@@ -23,30 +23,30 @@ const Resume = ({techStacks, technicalSkills, devTools, otherTechStacks, experie
         <div className='main__content app__flex__justify-align-flex-start'>
           <div className='tech__stack'>
             <div className='apex apex-with-margin-on-small'>
-                <div className='info__links lh-1-5 mb-2'>
-                  {/* <a href='http://augustine.dev'>augustine.dev</a> */}
-                  <p>Warri, Nigeria</p>
-                  <p><a href='mailto: augustine07@gmail.com'>augustinegp07@gmail.com</a></p>
-                  <p><a href='phone: +2347033903922'>+234 (703) 390 3922</a></p>
-                </div>
-                  <div className='lh-1-5 mb-2'>
-                    <h3 style={{ wordWrap: 'breakWord' }}>Core Technology:</h3>
-                    {techStacks.map((techStack) => <TechStack key={techStack._id} techStack={techStack} /> )}
-                  </div>
-                  <div className='lh-1-8 mb-2'>
-                    <h3 style={{ wordWrap: 'breakWord' }}>Technical Skills:</h3>
-                    {technicalSkills.map((technicalSkill) => <TechnicalSkills key={technicalSkill._id} technicalSkill={technicalSkill} /> )}
-                  </div>
+              <div className='info__links lh-1-5 mb-2'>
+                {/* <a href='http://augustine.dev'>augustine.dev</a> */}
+                <p>Warri, Nigeria</p>
+                <p><a href='mailto: augustine07@gmail.com'>augustinegp07@gmail.com</a></p>
+                <p><a href='phone: +2347033903922'>+234 (703) 390 3922</a></p>
+              </div>
+              <div className='lh-1-5 mb-2'>
+                <h3 style={{ wordWrap: 'breakWord' }}>Core Technology:</h3>
+                {techStacks.map((techStack) => <TechStack key={techStack._id} techStack={techStack} /> )}
+              </div>
+              <div className='lh-1-8 mb-2'>
+                <h3 style={{ wordWrap: 'breakWord' }}>Technical Skills:</h3>
+                {technicalSkills.map((technicalSkill) => <TechnicalSkills key={technicalSkill._id} technicalSkill={technicalSkill} /> )}
+              </div>
             </div>
             <div className='apex'>
-                <div className='lh-1-5 mb-2'>
-                  <h3>Tools:</h3>
-                  {devTools?.map((devTool) => <DevTools key={devTool._id} devTool={devTool} />)}
-                </div>
-                <div className='lh-1-8 mb-2'>
-                  <h3>Others:</h3>
-                  {otherTechStacks.map((otherTechStack) => <OtherTechStacks key={otherTechStack._id} otherTechStack={otherTechStack} /> )}
-                </div>
+              <div className='lh-1-5 mb-2'>
+                <h3>Tools:</h3>
+                {devTools?.map((devTool) => <DevTools key={devTool._id} devTool={devTool} />)}
+              </div>
+              <div className='lh-1-8 mb-2'>
+                <h3>Others:</h3>
+                {otherTechStacks.map((otherTechStack) => <OtherTechStacks key={otherTechStack._id} otherTechStack={otherTechStack} /> )}
+              </div>
             </div>
           </div>
           <div className='app__flex__justify-align-flex-start experiences'>

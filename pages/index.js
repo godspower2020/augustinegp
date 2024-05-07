@@ -10,61 +10,30 @@ import { Navbar, Contact, NavigationDots, SocialMedia } from '../components'
 
 const Home = ( {classNames, heroTitles, heroItems, abouts, skills, experience, testimonials} ) => {
   
-  // const hero = [
-  //   { 
-  //     title: 'Frontend Developer.', 
-  //     color: '#313bac',
-  //   },
-  //   { 
-  //     title: 'UI/UX Engineer.',
-  //     color: 'green', 
-  //   },
-  //   {
-  //     title: 'Designer.',
-  //     color: 'red',   
-  //   }
-  // ];
+  const hero = [
+    { 
+      title: 'Frontend Developer.', 
+      color: '#313bac',
+    },
+    { 
+      title: 'UI/UX Engineer.',
+      color: '#D862BC', 
+    },
+    {
+      title: 'Designer.',
+      color: '#FFF455',   
+    }
+  ];
 
-  // const [heroTitle, setHeroTitle] = useState(hero[0].title)
-  // const [animateHeroTitle, setAnimateHeroTitle] = useState({ y: 0, opacity: 1 }) 
+  const [heroIndex, setHeroIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const heroTitleSlider = () => {
-  //     for(let i = 0; i < hero.length; i++){
-  //       setInterval(() => {
-  //         setHeroTitle(hero[i].title)
-  //         // setAnimateHeroTitle([{y: 100, opacity: 0}])
-  //       }, 3000);
-  //     }
-  //   }
-
-  //   setHeroTitle(heroTitleSlider())
-  // }, [])
-  // // const [activeTitle, setActiveTitle] = useState({})
-  // // const [showActiveTitle, setShowActiveTitle] = useState(false)
-
-  // useEffect(() => {
-  //   setTitle(hero)
-  //   // setActiveTitle(hero[0])
-  //   setAnimateTitle([{y: 100, opacity: 0}])
-
-  //   const scrollText = (hero) => {
-  //     for(let i = 0; i < hero.length; i++){
-        
-  //       setTimeout(() => {
-  //         // setShowActiveTitle(true)
-  //         setTitle(hero)
-  //         setAnimateTitle([{y: 0, opacity: 1}])
-
-  //         setTimeout(() => {
-  //           // setShowActiveTitle(false)
-  //           setAnimateTitle([{y: 0, opacity: 0}])
-  //         }, 1000)
-  //       }, 1000)
-  //     }
-  //   }
-  // scrollText(hero)
-  // }, [])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex(prevIndex => (prevIndex + 1) % hero.length);
+    }, heroIndex === 0 ? 7000 : 4000); 
+  
+    return () => clearInterval(interval);
+  }, [heroIndex]);  
 
   // const settings = {
   //   className: "center app__profiles app__flex__align-items-flex-start",
@@ -92,26 +61,16 @@ const Home = ( {classNames, heroTitles, heroItems, abouts, skills, experience, t
               >
                 <div className="app__header-badge app__flex__justify-align-flex-start">
                   <div className="div-margin hero__animated-text">
-                      {/* {title?.map((item, index) => 
-                      <motion.p 
-                      className="p-text line"
-                      animate={animateTitle}
-                    > 
-                    {item}
-                    </motion.p>)} */}
-                    {/* <motion.h1 
+                  <motion.h1 
                       whileInView={{ x: [-200, 0], opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
-                      animate={animateHeroTitle}
-                    > 
-                      {heroTitle}
-                    </motion.h1> */}
-                    <motion.h1 
-                      whileInView={{ x: [-200, 0], opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
+                      initial={{ y: 100, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 2 }}
+                      exit={{ y: -100, opacity: 0 }}
+                      style={{ color: hero[heroIndex].color }}
                     >
-                      Frontend Developer.
-                    </motion.h1>
+                      {hero[heroIndex].title}
+                  </motion.h1>
                   </div>
                   <motion.div 
                     className="div-margin hero__text-div"

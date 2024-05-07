@@ -10,7 +10,7 @@ const contactLinks = [
     target: ''
   },
   { 
-    name: 'My Portfolio',
+    name: 'My Portfolio', 
     path: '/portfolio',
     target: ''
   },
@@ -34,25 +34,28 @@ const Navbar = () => {
 
     const outsideMenuClick = (e) => {
       if(!menuRef.current.contains(e.target)) {
-        active === 'app__Navbar-menu' && setActive('app__Navbar-menu')
-        toggleIcon === 'nav__toggler' && setToggleIcon('nav__toggler')
-        console.log(menuRef.current);
+        setActive('app__Navbar-menu');
+        setToggleIcon('nav__toggler');
       }
-
-      document.addEventListener("mousedown", outsideMenuClick)
     }
 
+    const handleScroll = () => {
+      setActive('app__Navbar-menu');
+      setToggleIcon('nav__toggler');
+    };
+
+    document.addEventListener("mousedown", outsideMenuClick);
+    document.addEventListener("scroll", handleScroll);
+
     return() => {
-      document.removeEventListener("mousedown", outsideMenuClick)
+      document.removeEventListener("mousedown", outsideMenuClick);
+      document.removeEventListener("scroll", handleScroll);
     }
   }, []);
 
   const navToggle = () => {
-    // show & unshow the nav menu
-    active === 'app__Navbar-menu' ? setActive('app__Navbar-menu nav__active') : setActive('app__Navbar-menu') 
-
-    // ToggleIcon
-    toggleIcon === 'nav__toggler' ? setToggleIcon('nav__toggler toggle') : setToggleIcon('nav__toggler')
+    active === 'app__Navbar-menu' ? setActive('app__Navbar-menu nav__active') : setActive('app__Navbar-menu');
+    toggleIcon === 'nav__toggler' ? setToggleIcon('nav__toggler toggle') : setToggleIcon('nav__toggler');
   }
 
   return (
@@ -135,4 +138,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

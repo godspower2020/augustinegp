@@ -16,7 +16,7 @@ const PortfolioCard = ({portfolio: {isMyPortfolio, heroImg, name, appleColor, pr
         <div className='colorful__apple-dots'>
             <div style={{backgroundColor: appleColor}}></div>
             <div style={{backgroundColor: appleColor}}></div>
-            <div style={{backgroundColor: appleColor}}></div> 
+            <div style={{backgroundColor: appleColor}}></div>  
         </div>
         
         <Link href={isMyPortfolio ? subProjectLink : `/portfolio/${slug.current}`} legacyBehavior>

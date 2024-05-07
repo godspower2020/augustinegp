@@ -12,7 +12,7 @@ const PortfolioDetails = ({ portfolio: {isAvailable, description, projectLink, c
   const [index, setIndex] = useState(0)
 
   const handleClick = (i) => {
-    setIndex(i);
+    setIndex(i); 
   }
 
   return (
@@ -29,7 +29,7 @@ const PortfolioDetails = ({ portfolio: {isAvailable, description, projectLink, c
               <HiOutlineArrowNarrowLeft />
             </a>
           </Link>
-          <h2>{title}</h2>
+          <h2>{title}</h2> 
         </div>
         <div className='portfolio-detail-container'>
           <div>
