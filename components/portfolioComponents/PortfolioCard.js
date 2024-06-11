@@ -8,7 +8,7 @@ const PortfolioCard = ({portfolio: {isMyPortfolio, heroImg, name, appleColor, pr
   return (
     <motion.div 
         whileInView={{ opacity: 1 }}
-        whileHover={{ scale:1.02 }}
+        whileHover={{ scale:1.02 }} 
         transition={{ duration: 0.5, type: 'tween' }}
         className='app__work-item'
         key={index}
