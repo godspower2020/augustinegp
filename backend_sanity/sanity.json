@@ -1,11 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "2yiixghq",
+    "dataset": "production"
+  },
   "project": {
     "name": "folio_web_app"
-  },
-  "api": {
-    "projectId": "78gvtlsb",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
